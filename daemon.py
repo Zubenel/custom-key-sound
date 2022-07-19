@@ -1,7 +1,6 @@
 # Carlos Olmos de Aguilera
 # 17-07-2022
 
-from tkinter import E
 import keyboard
 # https://github.com/boppreh/keyboard
 from pygame import mixer
@@ -19,7 +18,6 @@ pressed_list = []
 processes = []
 
 
-
 while True:
     # Wait for the next event.
     event = keyboard.read_event()
@@ -35,24 +33,4 @@ while True:
         print(event.name,'released')
         if event.name in pressed_list:
             pressed_list.remove(event.name)
-        #Process(target = release_sound.play())
-
-
-"""
-def play1():
- if(lightlevell > 800):
-    s = pygame.mixer.sound.load('/home/pi/laserharp-sounds/1.wav')
-    pygame.mixer.sound.play(-1)
-def play2():
- if(lightlevel2 > 800):
-    s = pygame.mixer.sound.load('/home/pi/laserharp-sounds/2.wav')
-    pygame.mixer.sound.play(-1)
-processes = []
-if __name__=='__main__':
-  processes.append(Process(target = play1))
-  processes.append(Process(target = play2))
-for process in processes:
-  process.start()
-for process in processes:
-  process.join()
-"""
+        Process(target = release_sound.play())
